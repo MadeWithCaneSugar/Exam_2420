@@ -3,7 +3,7 @@ Description=Runs the part 4 file which gets user information
 
 [Service]
 Type=oneshot
-ExecStart=/opt/part4
+ExecStart=/opt/part4/part4
 
 
 [Install]

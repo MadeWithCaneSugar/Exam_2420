@@ -6,4 +6,4 @@ OnStartupSec=60
 OnUnitActiveSec=86400
 
 [Install]
-WantedBy=part5.service
+WantedBy=timers.target
