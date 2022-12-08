@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer that runs part5.service to run part4(script) 1 minute after booting + once every day the unit is active. Since this uses a monotonic timer, it counts by seconds. 60 seconds after boot, and then every day, which is 86400 seconds.
+
+[Timer]
+OnStartupSec=60
+OnUnitActiveSec=86400
+
+[Install]
+WantedBy=part5.service

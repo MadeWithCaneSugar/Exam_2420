@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Search the passwd file in /etc
+users=$(grep -E '[[:digit:]]{4}' /etc/passwd)
+
+# Loop through the list of users
+for user in $users
+do
+    # Getting the specific details
+    NAME=$(echo $user | cut -d':' -f1)
+    UID=$(echo $user | cut -d':' -f3)
+    SHELL=$(echo $user | cut -d':' -f7)
+
+    # Checking to make sure UID is between 1000 and 5000
+    if [ "$uid" -ge 1000 ] && [ "$uid" -le 5000 ]
+    then
+        # Printing the data
+        # echo "$NAME - $UID - $SHELL"
+
+        # printing the data in the motd file
+        cho"$NAME - $UID - $SHELL" >> /etc/motd
+    fi
+done
